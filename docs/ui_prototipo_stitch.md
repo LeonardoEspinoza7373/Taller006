@@ -1,149 +1,158 @@
-# Prototipo de Interfaces – Sistema FitSIL  
-## Documentación de pantallas diseñadas en Stitch (HTML + CSS)
+# Prototipo de Interfaz – FitSIL
+Sistema de planificación, seguimiento y gestión de rutinas fitness.
 
-Este documento describe el prototipo de interfaz del sistema **FitSIL**, desarrollado a partir de las pantallas generadas en Stitch y posteriormente implementadas en HTML para el repositorio. El objetivo del prototipo es representar visualmente el flujo de navegación y los componentes principales del sistema de planificación de rutinas.
-
----
-
-# 1. Flujo general del prototipo
-
-El prototipo está compuesto por **8 pantallas**, organizadas de acuerdo con las principales funcionalidades del sistema FitSIL. El flujo inicia en la pantalla de **Login**, desde donde el usuario puede acceder a funcionalidades de gestión, seguimiento y administración:
-
-1. `login` → ingreso al sistema  
-2. `gestionRutinas` → planificación y administración de rutinas  
-3. `gestionUsuarios` → administración de perfiles de usuario  
-4. `estadisticas` → visualización del progreso e indicadores  
-5. `generacionReportes` → exportación de reportes  
-6. `planesNutricionales` → consulta de planes alimenticios  
-7. `notificacionesRecordatorios` → configuración de alertas  
-8. `PrioridadTareas` → organización y prioridad de actividades  
-
-Todas las pantallas comparten estilos unificados, con predominancia de fondo verde, tipografías claras y secciones centradas, manteniendo coherencia visual y fácil navegación.
+Este documento describe el flujo del prototipo diseñado en Stitch y muestra cada una de las pantallas generadas como base visual del sistema FitSIL. Las pantallas corresponden al módulo de rutinas, reportes, usuarios, notificaciones y funcionalidades adicionales.
 
 ---
 
-# 2. Documentación Individual de Pantallas
+# 1. Flujo General del Prototipo
+
+El prototipo de FitSIL está compuesto por 8 pantallas principales que cubren el flujo básico de un usuario dentro del sistema:
+
+1. **Login** → Acceso al sistema.  
+2. **Gestión de Rutinas** → Visualización, creación y edición de rutinas.  
+3. **Estadísticas** → Métricas de progreso del usuario.  
+4. **Generación de Reportes** → Exportación de informes PDF.  
+5. **Gestión de Usuarios** → Administración de cuentas, roles y perfiles.  
+6. **Notificaciones y Recordatorios** → Alertas de actividad, rutinas pendientes, avisos diarios.  
+7. **Planes Nutricionales** → Vista de dietas asignadas, calorías y macronutrientes.  
+8. **Prioridad de Tareas** → Organización de actividades o rutinas con niveles de prioridad.
+
+El flujo sigue la lógica de un sistema fitness completo: el usuario inicia sesión, accede al dashboard, administra rutinas, consulta reportes, recibe recordatorios y puede gestionar aspectos nutricionales.
 
 ---
 
-## 2.1. **Pantalla: login**
-**Archivo:** `login.html`  
+# 2. Pantallas
+
+---
+
+## **1. Pantalla de Login**
 **Propósito:**  
-Permitir que el usuario acceda al sistema mediante credenciales de inicio de sesión.  
-**Componentes principales:**  
-- Formulario de usuario y contraseña  
-- Botón de inicio de sesión  
-- Mensajes de validación  
-**Captura de pantalla:**  
+Permitir que el usuario acceda al sistema autenticándose con sus credenciales.
+
+**Componentes principales:**
+- Formulario (email y contraseña)
+- Botón de iniciar sesión
+- Enlaces de recuperación de contraseña o registro (si aplica)
+
+**Captura:**
+
 ![Login](./img/login.png)
 
-
 ---
 
-## 2.2. **Pantalla: gestión de rutinas**  
-**Archivo:** `gestionRutinas.html`  
+## **2. Gestión de Rutinas**
 **Propósito:**  
-Administrar rutinas de ejercicio, incluyendo creación, edición o eliminación.  
-**Componentes principales:**  
-- Lista de rutinas  
-- Botones de "Agregar", "Editar" y "Eliminar"  
-- Tabla o cards con información de ejercicios  
-**Captura de pantalla:**  
-![gestionRutinas](img/gestionRutinas.png)
+Permitir que el usuario visualice, administre, edite o cree nuevas rutinas semanales.
+
+**Componentes:**
+- Tarjetas de rutinas creadas
+- Botón “Crear rutina”
+- Listas de ejercicios dentro de cada rutina
+- Botones de editar o detalles
+- Calendario semanal
+
+**Captura:**
+
+![Gestión de Rutinas](./img/gestionRutinas.png)
 
 ---
 
-## 2.3. **Pantalla: gestión de usuarios**  
-**Archivo:** `gestionUsuarios.html`  
+## **3. Estadísticas**
 **Propósito:**  
-Manejar información de los usuarios registrados en FitSIL.  
-**Componentes principales:**  
-- Listado de usuarios  
-- Botones de gestión (crear, editar, eliminar)  
-- Formularios para datos personales  
-**Captura de pantalla:**  
-![gestionUsuarios](img/gestionUsuarios.png)
+Mostrar métricas claves del progreso del usuario.
+
+**Componentes principales:**
+- Tarjetas de indicadores (peso levantado, repeticiones, calorías)
+- Gráficos de barras y anillos
+- Botón de descarga de reporte
+- Selector de rango de fechas
+
+**Captura:**
+
+![Estadísticas](./img/estadisticas.png)
 
 ---
 
-## 2.4. **Pantalla: estadísticas del progreso**  
-**Archivo:** `estadisticas.html`  
+## **4. Generación de Reportes**
 **Propósito:**  
-Mostrar métricas de rendimiento, progreso físico y resultados semanales/mensuales.  
-**Componentes principales:**  
-- Gráficos (simulados con contenedores visuales)  
-- Indicadores numéricos de progreso  
-- Resumen general del historial  
-**Captura de pantalla:**  
-![estadisticas](img/estadisticas.png)
+Generar informes personalizados basados en estadísticas y rutinas del usuario.
+
+**Componentes:**
+- Selección del tipo de reporte
+- Rango de fechas
+- Selección de métricas
+- Botón Exportar PDF
+- Vista previa del reporte generado
+
+**Captura:**
+
+![Generación de Reportes](./img/generacionReportes.png)
 
 ---
 
-## 2.5. **Pantalla: generación de reportes**  
-**Archivo:** `generacionReportes.html`  
+## **5. Gestión de Usuarios**
 **Propósito:**  
-Permitir descargar o visualizar reportes del usuario o del progreso físico.  
-**Componentes principales:**  
-- Selector del tipo de reporte  
-- Botón de "Generar reporte"  
-- Sección de vista previa  
-**Captura de pantalla:**  
-![generacionReportes](img/generacionReportes.png)
+Administrar los usuarios del sistema (solo accesible a roles administrativos).
+
+**Componentes principales:**
+- Lista de usuarios
+- Opciones para editar, ver o eliminar usuarios
+- Información de roles, perfiles y estado de cuenta
+
+**Captura:**
+
+![Gestión de Usuarios](./img/gestionUsuarios.png)
 
 ---
 
-## 2.6. **Pantalla: planes nutricionales**  
-**Archivo:** `planesNutricionales.html`  
+## **6. Notificaciones y Recordatorios**
 **Propósito:**  
-Consultar o asignar planes de alimentación vinculados al progreso del usuario.  
-**Componentes principales:**  
-- Lista de planes nutritivos  
-- Sección de recomendaciones  
-- Botón para asignar o ver más detalles  
-**Captura de pantalla:**  
-![planesNutricionales](img/planesNutricionales.png)
+Mostrar recordatorios de rutinas, alertas de progreso, entrenamientos pendientes y avisos.
+
+**Componentes principales:**
+- Lista de recordatorios activos
+- Indicadores de prioridad
+- Iconos de notificación
+- Controles para marcar como realizadas o eliminar alertas
+
+**Captura:**
+
+![Notificaciones y Recordatorios](./img/notificacionesRecordatorios.png)
 
 ---
 
-## 2.7. **Pantalla: notificaciones y recordatorios**  
-**Archivo:** `notificacionesRecordatorios.html`  
+## **7. Planes Nutricionales**
 **Propósito:**  
-Permitir configurar notificaciones relevantes para el entrenamiento y alimentación.  
-**Componentes principales:**  
-- Switches o checkboxes para activar tipos de alertas  
-- Campos de hora o frecuencia  
-- Botón "Guardar cambios"  
-**Captura de pantalla:**  
-![notificacionesRecordatorios](img/notificacionesRecordatorios.png)
+Mostrar dietas, planes nutricionales, calorías diarias y macronutrientes asignados al usuario.
+
+**Componentes principales:**
+- Tarjetas de alimentos o comidas
+- Información de calorías
+- Macronutrientes por día
+- Menú / semana nutricional
+
+**Captura:**
+
+![Planes Nutricionales](./img/planesNutricionales.png)
 
 ---
 
-## 2.8. **Pantalla: prioridad de tareas**  
-**Archivo:** `PrioridadTareas.html`  
+## **8. Prioridad de Tareas**
 **Propósito:**  
-Organizar actividades o rutinas según prioridad y permitir reordenar pendientes.  
-**Componentes principales:**  
-- Lista de tareas con niveles de prioridad  
-- Colores y etiquetas indicativas  
-- Botones de gestión (completar, eliminar, mover)  
-**Captura de pantalla:**  
-![PrioridadTareas](img/PrioridadTareas.png)
+Organizar actividades o rutinas por prioridad (alta, media, baja).
+
+**Componentes principales:**
+- Listado de tareas
+- Etiquetas de prioridad
+- Controles para reordenar o completar tareas
+
+**Captura:**
+
+![Prioridad de Tareas](./img/prioridadTareas.png)
 
 ---
 
-# 3. Conclusiones del prototipo
-
-El prototipo creado en Stitch y llevado a HTML/CSS permite visualizar la estructura funcional del sistema FitSIL, garantizando:
-
-- Coherencia visual y estética uniforme (fondo verde, diseño limpio).  
-- Flujo claro entre las ocho pantallas principales.  
-- Preparación adecuada para futura implementación en frameworks reales.  
-- Facilidad para que el usuario final navegue y entienda cada módulo.  
-
-Este prototipo sirve como base para el desarrollo posterior de la plataforma y para validar la experiencia de usuario antes de implementar la lógica funcional final.
-
----
-
-# 4. Ubicación de archivos
-
+# ✔ Conclusión
+Este prototipo diseñado en Stitch representa la primera versión visual de FitSIL, permitiendo observar los flujos principales del sistema: rutinas, seguimiento del progreso, reportes, nutrición y administración. El diseño funciona como guía para la futura implementación funcional en el proyecto.
 
