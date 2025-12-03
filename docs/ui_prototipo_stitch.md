@@ -35,7 +35,8 @@ Permitir que el usuario acceda al sistema mediante credenciales de inicio de ses
 - Botón de inicio de sesión  
 - Mensajes de validación  
 **Captura de pantalla:**  
-![login](docs/img/login.png)
+![Login](./img/login.png)
+
 
 ---
 
