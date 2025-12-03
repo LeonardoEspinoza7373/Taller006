@@ -1,24 +1,24 @@
 # Prototipo de Interfaz – FitSIL
 Sistema de planificación, seguimiento y gestión de rutinas fitness.
 
-Este documento describe el flujo del prototipo diseñado en Stitch y muestra cada una de las pantallas generadas como base visual del sistema FitSIL. Las pantallas corresponden al módulo de rutinas, reportes, usuarios, notificaciones y funcionalidades adicionales.
+Este documento describe el flujo del prototipo diseñado en Stitch y presenta las pantallas desarrolladas para el sistema FitSIL, incluyendo vistas de escritorio y móvil. Estas pantallas representan la base visual de la aplicación y su interacción principal.
 
 ---
 
 # 1. Flujo General del Prototipo
 
-El prototipo de FitSIL está compuesto por 8 pantallas principales que cubren el flujo básico de un usuario dentro del sistema:
+El prototipo de FitSIL está compuesto por 8 pantallas principales que representan el flujo completo de un usuario dentro del sistema:
 
-1. **Login** → Acceso al sistema.  
-2. **Gestión de Rutinas** → Visualización, creación y edición de rutinas.  
-3. **Estadísticas** → Métricas de progreso del usuario.  
-4. **Generación de Reportes** → Exportación de informes PDF.  
-5. **Gestión de Usuarios** → Administración de cuentas, roles y perfiles.  
-6. **Notificaciones y Recordatorios** → Alertas de actividad, rutinas pendientes, avisos diarios.  
-7. **Planes Nutricionales** → Vista de dietas asignadas, calorías y macronutrientes.  
-8. **Prioridad de Tareas** → Organización de actividades o rutinas con niveles de prioridad.
+1. **Login**  
+2. **Gestión de Rutinas**  
+3. **Estadísticas**  
+4. **Generación de Reportes**  
+5. **Gestión de Usuarios**  
+6. **Notificaciones y Recordatorios**  
+7. **Planes Nutricionales**  
+8. **Prioridad de Tareas**
 
-El flujo sigue la lógica de un sistema fitness completo: el usuario inicia sesión, accede al dashboard, administra rutinas, consulta reportes, recibe recordatorios y puede gestionar aspectos nutricionales.
+El flujo inicia con el acceso del usuario, continúa con la gestión de sus rutinas y consulta de estadísticas, y finaliza con herramientas adicionales como nutrición, prioridades y alertas.
 
 ---
 
@@ -27,132 +27,155 @@ El flujo sigue la lógica de un sistema fitness completo: el usuario inicia sesi
 ---
 
 ## **1. Pantalla de Login**
-**Propósito:**  
-Permitir que el usuario acceda al sistema autenticándose con sus credenciales.
 
-**Componentes principales:**
-- Formulario (email y contraseña)
-- Botón de iniciar sesión
-- Enlaces de recuperación de contraseña o registro (si aplica)
+### 📌 Propósito  
+Permitir que el usuario acceda al sistema mediante sus credenciales.
 
-**Captura:**
+### 🧩 Componentes  
+- Formulario de correo y contraseña  
+- Botón de inicio de sesión  
+- Enlaces adicionales (opcional)
 
-![Login](./img/login.png)
+### 🖥️ Vista Escritorio  
+![Login Escritorio](./img/login.png)
+
+### 📱 Vista Móvil  
+![Login Móvil](./img/loginMobile.png)
 
 ---
 
 ## **2. Gestión de Rutinas**
-**Propósito:**  
-Permitir que el usuario visualice, administre, edite o cree nuevas rutinas semanales.
 
-**Componentes:**
-- Tarjetas de rutinas creadas
-- Botón “Crear rutina”
-- Listas de ejercicios dentro de cada rutina
-- Botones de editar o detalles
-- Calendario semanal
+### 📌 Propósito  
+Visualizar, crear y administrar rutinas semanales de entrenamiento.
 
-**Captura:**
+### 🧩 Componentes  
+- Tarjetas de rutinas  
+- Botones para crear/editar  
+- Calendario semanal  
+- Listados de ejercicios  
 
-![Gestión de Rutinas](./img/gestionRutinas.png)
+### 🖥️ Vista Escritorio  
+![Gestión Rutinas Escritorio](./img/gestionRutinas.png)
+
+### 📱 Vista Móvil  
+![Gestión Rutinas Móvil](./img/gestionRutinasMobile.png)
 
 ---
 
 ## **3. Estadísticas**
-**Propósito:**  
-Mostrar métricas claves del progreso del usuario.
 
-**Componentes principales:**
-- Tarjetas de indicadores (peso levantado, repeticiones, calorías)
-- Gráficos de barras y anillos
-- Botón de descarga de reporte
-- Selector de rango de fechas
+### 📌 Propósito  
+Mostrar visualizaciones del progreso del usuario en tiempo real.
 
-**Captura:**
+### 🧩 Componentes  
+- Gráficos de barras y circulares  
+- Indicadores de progreso  
+- Filtros por fecha  
+- Botón para exportar reporte  
 
-![Estadísticas](./img/estadisticas.png)
+### 🖥️ Vista Escritorio  
+![Estadísticas Escritorio](./img/estadisticas.png)
+
+### 📱 Vista Móvil  
+![Estadísticas Móvil](./img/estadisticasMobile.png)
 
 ---
 
 ## **4. Generación de Reportes**
-**Propósito:**  
-Generar informes personalizados basados en estadísticas y rutinas del usuario.
 
-**Componentes:**
-- Selección del tipo de reporte
-- Rango de fechas
-- Selección de métricas
-- Botón Exportar PDF
-- Vista previa del reporte generado
+### 📌 Propósito  
+Generar informes personalizados basados en el historial y estadísticas.
 
-**Captura:**
+### 🧩 Componentes  
+- Selector de rango de fechas  
+- Lista de métricas para incluir  
+- Botón para exportar PDF  
+- Vista previa del reporte  
 
-![Generación de Reportes](./img/generacionReportes.png)
+### 🖥️ Vista Escritorio  
+![Reportes Escritorio](./img/generacionReportes.png)
+
+### 📱 Vista Móvil  
+![Reportes Móvil](./img/generacionReportesMobile.png)
 
 ---
 
 ## **5. Gestión de Usuarios**
-**Propósito:**  
-Administrar los usuarios del sistema (solo accesible a roles administrativos).
 
-**Componentes principales:**
-- Lista de usuarios
-- Opciones para editar, ver o eliminar usuarios
-- Información de roles, perfiles y estado de cuenta
+### 📌 Propósito  
+Administrar perfiles, roles y estados de cuenta.
 
-**Captura:**
+### 🧩 Componentes  
+- Tabla de usuarios  
+- Botones para ver/editar/eliminar  
+- Datos personales y rol del usuario  
 
-![Gestión de Usuarios](./img/gestionUsuarios.png)
+### 🖥️ Vista Escritorio  
+![Gestión Usuarios Escritorio](./img/gestionUsuarios.png)
+
+### 📱 Vista Móvil  
+![Gestión Usuarios Móvil](./img/gestionUsuariosMobile.png)
 
 ---
 
 ## **6. Notificaciones y Recordatorios**
-**Propósito:**  
-Mostrar recordatorios de rutinas, alertas de progreso, entrenamientos pendientes y avisos.
 
-**Componentes principales:**
-- Lista de recordatorios activos
-- Indicadores de prioridad
-- Iconos de notificación
-- Controles para marcar como realizadas o eliminar alertas
+### 📌 Propósito  
+Informar al usuario sobre rutinas pendientes, logros o alertas importantes.
 
-**Captura:**
+### 🧩 Componentes  
+- Listado de recordatorios  
+- Iconos de alerta  
+- Botones para marcar como completado  
+- Indicadores de prioridad  
 
-![Notificaciones y Recordatorios](./img/notificacionesRecordatorios.png)
+### 🖥️ Vista Escritorio  
+![Notificaciones Escritorio](./img/notificacionesRecordatorios.png)
+
+### 📱 Vista Móvil  
+![Notificaciones Móvil](./img/notificacionesRecordatoriosMobile.png)
 
 ---
 
 ## **7. Planes Nutricionales**
-**Propósito:**  
-Mostrar dietas, planes nutricionales, calorías diarias y macronutrientes asignados al usuario.
 
-**Componentes principales:**
-- Tarjetas de alimentos o comidas
-- Información de calorías
-- Macronutrientes por día
-- Menú / semana nutricional
+### 📌 Propósito  
+Gestionar y visualizar dietas, calorías y macronutrientes asignados al usuario.
 
-**Captura:**
+### 🧩 Componentes  
+- Tarjetas nutricionales  
+- Información de calorías y macros  
+- Listas de alimentos  
+- Organización por días  
 
-![Planes Nutricionales](./img/planesNutricionales.png)
+### 🖥️ Vista Escritorio  
+![Planes Nutricionales Escritorio](./img/planesNutricionales.png)
+
+### 📱 Vista Móvil  
+![Planes Nutricionales Móvil](./img/planesNutricionalesMobile.png)
 
 ---
 
 ## **8. Prioridad de Tareas**
-**Propósito:**  
-Organizar actividades o rutinas por prioridad (alta, media, baja).
 
-**Componentes principales:**
-- Listado de tareas
-- Etiquetas de prioridad
-- Controles para reordenar o completar tareas
+### 📌 Propósito  
+Permitir la organización de actividades o rutinas según su importancia.
 
-**Captura:**
+### 🧩 Componentes  
+- Listado de tareas  
+- Etiquetas de prioridad (alta, media, baja)  
+- Botones para completar o reordenar tareas  
 
-![Prioridad de Tareas](./img/prioridadTareas.png)
+### 🖥️ Vista Escritorio  
+![Prioridad Escritorio](./img/prioridadTareas.png)
+
+### 📱 Vista Móvil  
+![Prioridad Móvil](./img/prioridadTareasMobile.png)
 
 ---
 
 # ✔ Conclusión
-Este prototipo diseñado en Stitch representa la primera versión visual de FitSIL, permitiendo observar los flujos principales del sistema: rutinas, seguimiento del progreso, reportes, nutrición y administración. El diseño funciona como guía para la futura implementación funcional en el proyecto.
+
+El prototipo elaborado en Stitch permite visualizar de forma clara y ordenada la estructura de FitSIL, tanto en su versión de escritorio como móvil. Estas pantallas sirven como guía inicial para el desarrollo funcional del sistema y garantizan una experiencia de usuario coherente, moderna y adaptada a diferentes dispositivos.
 
