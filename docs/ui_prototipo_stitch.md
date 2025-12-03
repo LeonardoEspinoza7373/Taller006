@@ -35,7 +35,7 @@ Permitir que el usuario acceda al sistema mediante credenciales de inicio de ses
 - Botón de inicio de sesión  
 - Mensajes de validación  
 **Captura de pantalla:**  
-![login](file:///C:/Users/patri/Desktop/frontend/prototipos/ui-stitch/login.html)
+![login](docs/img/estadisticas.png)
 
 ---
 
