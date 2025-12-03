@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard de Planes Nutricionales</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2bee6c",
+              "background-light": "#f6f8f6",
+              "background-dark": "#111813",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex min-h-screen">
+<aside class="w-64 bg-[#141d17] flex-shrink-0 flex flex-col">
+<div class="flex h-full min-h-[700px] flex-col justify-between p-4">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 px-2 py-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbxy6VXln-F6qUG6FTyeWPwqNpUCDl1nzJeQgiTWPPu4kkl5SRTGCClnKJYx4vqgHIZqzQWNr4WBrQ40rWO1-B7_OT1nqxt1mcuMLgJBBFHd4efi5Rio8OCeVI7R5B1hDJVb2XAk7c__OyR-0bpET2xO1SocDWentOBLAScAowMhCY8dHrxlw6_zgdLmo5ycsDvqfN4-XwEDnnU8oUCzVetYWxRbIp118_5GvJGw8lgFpevxjSsa0BPF1G3rhzXQA4JFYYgDzPwZk");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-bold leading-normal">Ana López</h1>
+<p class="text-[#9db9a6] text-sm font-normal leading-normal">Plan Premium</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#28392e]" href="#">
+<span class="material-symbols-outlined text-white" style="font-size: 24px;">restaurant_menu</span>
+<p class="text-white text-sm font-medium leading-normal">Planes Nutricionales</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">fitness_center</span>
+<p class="text-sm font-medium leading-normal">Rutinas</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">history</span>
+<p class="text-sm font-medium leading-normal">Historial</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">person</span>
+<p class="text-sm font-medium leading-normal">Perfil</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">settings</span>
+<p class="text-sm font-medium leading-normal">Configuración</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">help</span>
+<p class="text-sm font-medium leading-normal">Ayuda</p>
+</a>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-8 overflow-y-auto">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+<div class="flex flex-col gap-2">
+<p class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Planes Nutricionales</p>
+<p class="text-[#9db9a6] text-base font-normal leading-normal">Encuentra el plan perfecto para alcanzar tus metas de salud y fitness.</p>
+</div>
+<button class="flex items-center justify-center gap-2 overflow-hidden rounded-lg h-12 px-6 bg-primary text-background-dark text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+<span class="truncate">Crear Plan Personalizado</span>
+</button>
+</div>
+<div class="flex flex-wrap gap-3 mb-8">
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-primary/20 px-4">
+<p class="text-primary text-sm font-bold leading-normal">Todos</p>
+</div>
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-[#28392e] px-4 hover:bg-primary/20 transition-colors">
+<p class="text-white hover:text-primary text-sm font-medium leading-normal">Pérdida de Peso</p>
+</div>
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-[#28392e] px-4 hover:bg-primary/20 transition-colors">
+<p class="text-white hover:text-primary text-sm font-medium leading-normal">Ganancia Muscular</p>
+</div>
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-[#28392e] px-4 hover:bg-primary/20 transition-colors">
+<p class="text-white hover:text-primary text-sm font-medium leading-normal">Mantenimiento</p>
+</div>
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-[#28392e] px-4 hover:bg-primary/20 transition-colors">
+<p class="text-white hover:text-primary text-sm font-medium leading-normal">Vegetariano</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-[#1b2b21] rounded-xl overflow-hidden flex flex-col group">
+<div class="relative">
+<img alt="Ensalada saludable con pollo a la parrilla" class="h-52 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzk4jeB9Nb62bcwIGWJMsNcDuYAvkV1r0xsoOTv8r-llM8k-d3lktTOG8y7sHArKCQdbWjJIfnva2OWcwf-ws7kOSPztuqhZmA0FKnPuApN--LXpGhh0tR9ZH9KxwYvDrVNvDRrLx1ztAQ-uuP5lF8PJ6iEsM1XarRLgP_elfCPPOZ6g6mbwUNrsfWNCxi1FR8SiCgYr3zxJV6sPde1KRcArC8IKiK-MxOHgTkwd53daq4Ru0wXWakVaoVp6V6nFNOmGQ_rgqwhvA"/>
+<div class="absolute top-4 right-4 bg-primary/20 text-primary px-3 py-1 text-xs font-bold rounded-full">PÉRDIDA DE PESO</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-white text-xl font-bold leading-tight tracking-[-0.015em] mb-2">Plan "Define y Recorta"</h3>
+<p class="text-[#9db9a6] text-sm font-normal leading-normal mb-4 flex-grow">Ideal para quienes buscan reducir grasa corporal manteniendo la energía. Enfoque en proteínas magras y vegetales frescos.</p>
+<div class="flex items-center justify-between text-white border-t border-white/10 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">local_fire_department</span>
+<span class="text-sm font-medium">1800 kcal</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">schedule</span>
+<span class="text-sm font-medium">4 semanas</span>
+</div>
+</div>
+<button class="mt-4 w-full flex items-center justify-center gap-2 overflow-hidden rounded-lg h-11 px-6 bg-[#28392e] text-white text-sm font-bold leading-normal hover:bg-primary hover:text-background-dark transition-colors">
+<span class="truncate">Ver Detalles</span>
+</button>
+</div>
+</div>
+<div class="bg-[#1b2b21] rounded-xl overflow-hidden flex flex-col group">
+<div class="relative">
+<img alt="Plato con salmón, arroz y brócoli" class="h-52 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAie4D-wpQE3UWu7jffkhWN3Gwyb5ahVrvF2yXQOwC8E4w5Fy9hoTCkk1Bw0Xsj8HFOTKb6Pk3GNa3PcxRzErCSSAlv2l40csW09Utx5qCpssUEMcl2SAidx-oZ9dfObYyHAteRdFTChUOsy0FcmXKrAlGAWr5KTkjNh8f_ICENvaq478DIzRP8llIK-MnT_xYnGwNnIw9YtFDcNc9fwstWfguu6NCX439KV2YmoGtMcAGoOo9klvfi4xsxYVHa9BgcjpnkPnN6psg"/>
+<div class="absolute top-4 right-4 bg-primary/20 text-primary px-3 py-1 text-xs font-bold rounded-full">GANANCIA MUSCULAR</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-white text-xl font-bold leading-tight tracking-[-0.015em] mb-2">Plan "Volumen Limpio"</h3>
+<p class="text-[#9db9a6] text-sm font-normal leading-normal mb-4 flex-grow">Maximiza el crecimiento muscular con un superávit calórico controlado. Rico en proteínas y carbohidratos complejos.</p>
+<div class="flex items-center justify-between text-white border-t border-white/10 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">local_fire_department</span>
+<span class="text-sm font-medium">2500 kcal</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">schedule</span>
+<span class="text-sm font-medium">8 semanas</span>
+</div>
+</div>
+<button class="mt-4 w-full flex items-center justify-center gap-2 overflow-hidden rounded-lg h-11 px-6 bg-[#28392e] text-white text-sm font-bold leading-normal hover:bg-primary hover:text-background-dark transition-colors">
+<span class="truncate">Ver Detalles</span>
+</button>
+</div>
+</div>
+<div class="bg-[#1b2b21] rounded-xl overflow-hidden flex flex-col group">
+<div class="relative">
+<img alt="Tazón de avena con frutas y nueces" class="h-52 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo5_s22osdmggnDhHGB9TM4reJm3edFmBqT2WtU1kWtjtIvyacCMnHhW-uSQQ7XXH_jVQ17SC4ZC-QUTA2JYvLohHXIUXpYbK9pL-gTz7cCJbmslWeSJIaYqQY8v2G5KK6WXYl_o8tWY1amv7Npvazk9j3gAXxK92LDqyEjC1ejaQ9M3K1UR72g9NOPMw47d_uDd_LWeBOzG4ug-0byOwZAYccxBhUAY3fwO4OSOs3kioUEsKeu9tsNzM41FHOvcnsyYJ1wqsi_mU"/>
+<div class="absolute top-4 right-4 bg-primary/20 text-primary px-3 py-1 text-xs font-bold rounded-full">MANTENIMIENTO</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-white text-xl font-bold leading-tight tracking-[-0.015em] mb-2">Plan "Equilibrio Vital"</h3>
+<p class="text-[#9db9a6] text-sm font-normal leading-normal mb-4 flex-grow">Mantén tu físico actual con una dieta balanceada y nutritiva. Perfecto para un estilo de vida activo y saludable.</p>
+<div class="flex items-center justify-between text-white border-t border-white/10 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">local_fire_department</span>
+<span class="text-sm font-medium">2200 kcal</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">schedule</span>
+<span class="text-sm font-medium">Continuo</span>
+</div>
+</div>
+<button class="mt-4 w-full flex items-center justify-center gap-2 overflow-hidden rounded-lg h-11 px-6 bg-[#28392e] text-white text-sm font-bold leading-normal hover:bg-primary hover:text-background-dark transition-colors">
+<span class="truncate">Ver Detalles</span>
+</button>
+</div>
+</div>
+<div class="bg-[#1b2b21] rounded-xl overflow-hidden flex flex-col group">
+<div class="relative">
+<img alt="Plato de pasta con pesto y tomates cherry" class="h-52 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmPKjIe4uHOt6fTe2Iye5eaV8wyldG0sPaB8C7-Aibt2LlBv3Tj1pNcTQPGGW1BeQ9kqgcrlGAPwJmMu2cDllOiaEbNPTvagpRDTuXeN8KgdJKyTOzthKr-7tk1Ov_AWyxyjkBcsne7_j_fGvL324HmWsx4hiZzZtZUYxwybNC98eRKk60rQNW-UKL_D3PO9xNopiHLlwKV7uEncgFOAn_ddzBusIHRnP4H_e7BVSqaE_zLqG63CgzcYIv8h0QwJo3NRwM1KjgyvE"/>
+<div class="absolute top-4 right-4 bg-primary/20 text-primary px-3 py-1 text-xs font-bold rounded-full">VEGETARIANO</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-white text-xl font-bold leading-tight tracking-[-0.015em] mb-2">Plan "Energía Verde"</h3>
+<p class="text-[#9db9a6] text-sm font-normal leading-normal mb-4 flex-grow">Una opción basada en plantas llena de sabor y nutrientes para potenciar tu rendimiento y bienestar general.</p>
+<div class="flex items-center justify-between text-white border-t border-white/10 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">local_fire_department</span>
+<span class="text-sm font-medium">2000 kcal</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">schedule</span>
+<span class="text-sm font-medium">6 semanas</span>
+</div>
+</div>
+<button class="mt-4 w-full flex items-center justify-center gap-2 overflow-hidden rounded-lg h-11 px-6 bg-[#28392e] text-white text-sm font-bold leading-normal hover:bg-primary hover:text-background-dark transition-colors">
+<span class="truncate">Ver Detalles</span>
+</button>
+</div>
+</div>
+<div class="bg-[#1b2b21] rounded-xl overflow-hidden flex flex-col group">
+<div class="relative">
+<img alt="Pechuga de pollo con quinoa y aguacate" class="h-52 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBymw3V8Ifj3pjAArSaGGxiLSZl9SAOngGHgCHrXJ8Wku_z5H2vhvzUhz1CdBsAibrIR48Pl7MjZg2uVV68CoyfI4qwd_8heFwCrIEJLVL3YuErlF0j6Q1u1kkDvs1NqNdHl-ztoi8wSmggMt7NspHW0nqWcXN-qTpNDurMp6tCFj4XUEL5oEuIdAIxfojpYESKAPqr5rDEjegIQgQcPojbGWpJrtbvz2kt1ItptbJ69UQ17udC_TQq4oqUJ5bQXYM3ODSkaH1IpQs"/>
+<div class="absolute top-4 right-4 bg-primary/20 text-primary px-3 py-1 text-xs font-bold rounded-full">PÉRDIDA DE PESO</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-white text-xl font-bold leading-tight tracking-[-0.015em] mb-2">Plan "Keto Kickstart"</h3>
+<p class="text-[#9db9a6] text-sm font-normal leading-normal mb-4 flex-grow">Un plan cetogénico para una rápida pérdida de grasa. Alto en grasas saludables, moderado en proteínas y bajo en carbohidratos.</p>
+<div class="flex items-center justify-between text-white border-t border-white/10 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">local_fire_department</span>
+<span class="text-sm font-medium">1900 kcal</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">schedule</span>
+<span class="text-sm font-medium">4 semanas</span>
+</div>
+</div>
+<button class="mt-4 w-full flex items-center justify-center gap-2 overflow-hidden rounded-lg h-11 px-6 bg-[#28392e] text-white text-sm font-bold leading-normal hover:bg-primary hover:text-background-dark transition-colors">
+<span class="truncate">Ver Detalles</span>
+</button>
+</div>
+</div>
+<div class="bg-[#1b2b21] rounded-xl overflow-hidden flex flex-col group">
+<div class="relative">
+<img alt="Batido de proteínas con plátano y arándanos" class="h-52 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKZMxq-fuJK9FwV9b3Z1Hzt9NY0UP2Y6yUF1A_T4CC9ldX_lXKs5XXAGZl-09aCrI6qRIRd5K0FGPxnoq-nN4BIEsuhKYfsXa-So5IplExdB2cRWgQ8BN393Lf9N6cbE-lDHTvNTGideC3RCRC8EHR2Bi42chjneYGxJWLMql3OXhKyE1VDpEQU5Kh4oAPrgNoOqmLFOoaazqCPzrU1fwTXiZPgdZ5UWeDb0lZ311syzS28iwkWc2ma4Zh33wQ-CP0mk4Zh0EABS8"/>
+<div class="absolute top-4 right-4 bg-primary/20 text-primary px-3 py-1 text-xs font-bold rounded-full">GANANCIA MUSCULAR</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-white text-xl font-bold leading-tight tracking-[-0.015em] mb-2">Plan "Fuerza Bruta"</h3>
+<p class="text-[#9db9a6] text-sm font-normal leading-normal mb-4 flex-grow">Diseñado para levantadores serios. Calorías y proteínas elevadas para soportar entrenamientos intensos y recuperación.</p>
+<div class="flex items-center justify-between text-white border-t border-white/10 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">local_fire_department</span>
+<span class="text-sm font-medium">3000 kcal</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">schedule</span>
+<span class="text-sm font-medium">12 semanas</span>
+</div>
+</div>
+<button class="mt-4 w-full flex items-center justify-center gap-2 overflow-hidden rounded-lg h-11 px-6 bg-[#28392e] text-white text-sm font-bold leading-normal hover:bg-primary hover:text-background-dark transition-colors">
+<span class="truncate">Ver Detalles</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

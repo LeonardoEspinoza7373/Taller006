@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard de Usuario (Rutinas)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2bee6c",
+              "background-light": "#f6f8f6",
+              "background-dark": "#111813",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex min-h-screen">
+<aside class="w-64 bg-[#141d17] flex-shrink-0 flex flex-col">
+<div class="flex h-full min-h-[700px] flex-col justify-between p-4">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 px-2 py-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbxy6VXln-F6qUG6FTyeWPwqNpUCDl1nzJeQgiTWPPu4kkl5SRTGCClnKJYx4vqgHIZqzQWNr4WBrQ40rWO1-B7_OT1nqxt1mcuMLgJBBFHd4efi5Rio8OCeVI7R5B1hDJVb2XAk7c__OyR-0bpET2xO1SocDWentOBLAScAowMhCY8dHrxlw6_zgdLmo5ycsDvqfN4-XwEDnnU8oUCzVetYWxRbIp118_5GvJGw8lgFpevxjSsa0BPF1G3rhzXQA4JFYYgDzPwZk");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-bold leading-normal">Ana López</h1>
+<p class="text-[#9db9a6] text-sm font-normal leading-normal">Plan Premium</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#28392e]" href="#">
+<span class="material-symbols-outlined text-white" style="font-size: 24px;">dashboard</span>
+<p class="text-white text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">calendar_month</span>
+<p class="text-sm font-medium leading-normal">Planificador</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">history</span>
+<p class="text-sm font-medium leading-normal">Historial</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">person</span>
+<p class="text-sm font-medium leading-normal">Perfil</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">settings</span>
+<p class="text-sm font-medium leading-normal">Configuración</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">help</span>
+<p class="text-sm font-medium leading-normal">Ayuda</p>
+</a>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-8 overflow-y-auto">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+<div class="flex flex-col gap-2">
+<p class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Mis Rutinas</p>
+<p class="text-[#9db9a6] text-base font-normal leading-normal">Organiza y planifica tus entrenamientos semanales.</p>
+</div>
+<button class="flex items-center justify-center gap-2 overflow-hidden rounded-lg h-12 px-6 bg-primary text-background-dark text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+<span class="truncate">Crear Rutina</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-[#1b2b21] rounded-lg p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col">
+<h3 class="text-white text-xl font-bold">Día de Pecho y Tríceps</h3>
+<p class="text-[#9db9a6] text-sm">Lunes, Miércoles, Viernes</p>
+</div>
+<button class="text-white/50 hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<p class="text-white text-sm">Press de banca</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<p class="text-white text-sm">Flexiones</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<p class="text-white text-sm">Fondos en paralelas</p>
+</div>
+<p class="text-[#9db9a6] text-sm pt-1">+ 2 ejercicios más</p>
+</div>
+</div>
+<div class="flex items-center justify-between mt-6">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full border-2 border-[#1b2b21] bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbxy6VXln-F6qUG6FTyeWPwqNpUCDl1nzJeQgiTWPPu4kkl5SRTGCClnKJYx4vqgHIZqzQWNr4WBrQ40rWO1-B7_OT1nqxt1mcuMLgJBBFHd4efi5Rio8OCeVI7R5B1hDJVb2XAk7c__OyR-0bpET2xO1SocDWentOBLAScAowMhCY8dHrxlw6_zgdLmo5ycsDvqfN4-XwEDnnU8oUCzVetYWxRbIp118_5GvJGw8lgFpevxjSsa0BPF1G3rhzXQA4JFYYgDzPwZk")'></div>
+<div class="size-8 rounded-full border-2 border-[#1b2b21] bg-gray-600 flex items-center justify-center text-white text-xs font-bold">
+                                +3
+                            </div>
+</div>
+<button class="flex items-center justify-center gap-2 overflow-hidden rounded-md h-9 px-4 bg-primary/20 text-primary text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined text-base">edit</span>
+<span class="truncate">Editar</span>
+</button>
+</div>
+</div>
+<div class="bg-[#1b2b21] rounded-lg p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col">
+<h3 class="text-white text-xl font-bold">Día de Pierna</h3>
+<p class="text-[#9db9a6] text-sm">Martes, Jueves</p>
+</div>
+<button class="text-white/50 hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<p class="text-white text-sm">Sentadillas</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<p class="text-white text-sm">Zancadas</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<p class="text-white text-sm">Prensa de piernas</p>
+</div>
+<p class="text-[#9db9a6] text-sm pt-1">+ 3 ejercicios más</p>
+</div>
+</div>
+<div class="flex items-center justify-between mt-6">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full border-2 border-[#1b2b21] bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbxy6VXln-F6qUG6FTyeWPwqNpUCDl1nzJeQgiTWPPu4kkl5SRTGCClnKJYx4vqgHIZqzQWNr4WBrQ40rWO1-B7_OT1nqxt1mcuMLgJBBFHd4efi5Rio8OCeVI7R5B1hDJVb2XAk7c__OyR-0bpET2xO1SocDWentOBLAScAowMhCY8dHrxlw6_zgdLmo5ycsDvqfN4-XwEDnnU8oUCzVetYWxRbIp118_5GvJGw8lgFpevxjSsa0BPF1G3rhzXQA4JFYYgDzPwZk")'></div>
+</div>
+<button class="flex items-center justify-center gap-2 overflow-hidden rounded-md h-9 px-4 bg-primary/20 text-primary text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined text-base">edit</span>
+<span class="truncate">Editar</span>
+</button>
+</div>
+</div>
+<div class="bg-[#1b2b21] rounded-lg p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col">
+<h3 class="text-white text-xl font-bold">Cardio Intenso</h3>
+<p class="text-[#9db9a6] text-sm">Sábado</p>
+</div>
+<button class="text-white/50 hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<p class="text-white text-sm">Correr en cinta</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<p class="text-white text-sm">Saltar la cuerda</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<p class="text-white text-sm">Burpees</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-6">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full border-2 border-[#1b2b21] bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbxy6VXln-F6qUG6FTyeWPwqNpUCDl1nzJeQgiTWPPu4kkl5SRTGCClnKJYx4vqgHIZqzQWNr4WBrQ40rWO1-B7_OT1nqxt1mcuMLgJBBFHd4efi5Rio8OCeVI7R5B1hDJVb2XAk7c__OyR-0bpET2xO1SocDWentOBLAScAowMhCY8dHrxlw6_zgdLmo5ycsDvqfN4-XwEDnnU8oUCzVetYWxRbIp118_5GvJGw8lgFpevxjSsa0BPF1G3rhzXQA4JFYYgDzPwZk")'></div>
+</div>
+<button class="flex items-center justify-center gap-2 overflow-hidden rounded-md h-9 px-4 bg-primary/20 text-primary text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined text-base">edit</span>
+<span class="truncate">Editar</span>
+</button>
+</div>
+</div>
+<div class="border-2 border-dashed border-[#28392e] rounded-lg p-6 flex flex-col items-center justify-center text-center hover:bg-[#1b2b21] transition-colors cursor-pointer">
+<div class="size-12 rounded-full bg-[#28392e] flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">add</span>
+</div>
+<h3 class="text-white font-bold text-lg">Crear Nueva Rutina</h3>
+<p class="text-[#9db9a6] text-sm">Diseña un nuevo plan de entrenamiento.</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1 space-y-8">
+<div>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">Calendario de Rutinas</h2>
+<div class="bg-[#1b2b21] p-5 rounded-lg">
+<div class="flex justify-between items-center mb-4">
+<button class="text-white/70 hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<h3 class="text-white font-bold text-lg">Octubre 2024</h3>
+<button class="text-white/70 hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-7 text-center gap-y-2 text-sm">
+<div class="text-[#9db9a6] font-medium">L</div>
+<div class="text-[#9db9a6] font-medium">M</div>
+<div class="text-[#9db9a6] font-medium">X</div>
+<div class="text-[#9db9a6] font-medium">J</div>
+<div class="text-[#9db9a6] font-medium">V</div>
+<div class="text-[#9db9a6] font-medium">S</div>
+<div class="text-[#9db9a6] font-medium">D</div>
+<div class="text-white/50">30</div>
+<div class="text-white/50">31</div>
+<div class="text-white font-medium relative"><span class="relative z-10">1</span><div class="absolute inset-1.5 -z-0 bg-primary/20 rounded-full"></div></div>
+<div class="text-white font-medium relative"><span class="relative z-10">2</span><div class="absolute inset-1.5 -z-0 bg-primary/20 rounded-full"></div></div>
+<div class="text-white font-medium">3</div>
+<div class="text-white font-medium">4</div>
+<div class="text-white font-medium">5</div>
+<div class="text-white font-medium">6</div>
+<div class="text-white font-medium">7</div>
+<div class="text-white font-medium">8</div>
+<div class="text-white font-medium">9</div>
+<div class="text-white font-medium">10</div>
+<div class="text-white font-medium">11</div>
+<div class="text-white font-medium">12</div>
+<div class="text-white font-medium">13</div>
+<div class="text-white font-medium">14</div>
+<div class="text-white font-medium">15</div>
+<div class="text-white font-medium">16</div>
+<div class="text-white font-medium">17</div>
+<div class="text-white font-medium">18</div>
+<div class="text-white font-medium">19</div>
+<div class="text-white font-medium">20</div>
+<div class="text-white font-medium">21</div>
+<div class="text-white font-medium">22</div>
+<div class="text-white font-medium">23</div>
+<div class="text-white font-medium relative"><span class="relative z-10">24</span><div class="absolute inset-0 bg-primary rounded-full"></div><span class="text-background-dark font-bold relative z-10">24</span></div>
+<div class="text-white font-medium">25</div>
+<div class="text-white font-medium">26</div>
+<div class="text-white font-medium">27</div>
+<div class="text-white font-medium">28</div>
+<div class="text-white font-medium">29</div>
+<div class="text-white font-medium">30</div>
+<div class="text-white font-medium">31</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">Próximas Rutinas</h2>
+<div class="space-y-3">
+<div class="bg-[#1b2b21] p-4 rounded-lg flex items-center gap-4">
+<div class="bg-primary/20 p-3 rounded-lg flex flex-col items-center justify-center">
+<span class="text-primary text-xs font-bold uppercase">OCT</span>
+<span class="text-white text-2xl font-bold">25</span>
+</div>
+<div>
+<p class="text-white font-bold">Día de Pecho y Tríceps</p>
+<p class="text-[#9db9a6] text-sm">Mañana - 8:00 AM</p>
+</div>
+</div>
+<div class="bg-[#1b2b21] p-4 rounded-lg flex items-center gap-4">
+<div class="bg-[#28392e] p-3 rounded-lg flex flex-col items-center justify-center">
+<span class="text-white/70 text-xs font-bold uppercase">OCT</span>
+<span class="text-white text-2xl font-bold">26</span>
+</div>
+<div>
+<p class="text-white font-bold">Cardio Intenso</p>
+<p class="text-[#9db9a6] text-sm">Sábado - 10:00 AM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

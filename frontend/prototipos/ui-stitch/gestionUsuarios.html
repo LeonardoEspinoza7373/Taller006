@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard de Administrador (Usuarios)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2bee6c",
+              "background-light": "#f6f8f6",
+              "background-dark": "#111813",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex min-h-screen">
+<aside class="w-64 bg-[#141d17] flex-shrink-0 flex flex-col">
+<div class="flex h-full min-h-[700px] flex-col justify-between p-4">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 px-2 py-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbxy6VXln-F6qUG6FTyeWPwqNpUCDl1nzJeQgiTWPPu4kkl5SRTGCClnKJYx4vqgHIZqzQWNr4WBrQ40rWO1-B7_OT1nqxt1mcuMLgJBBFHd4efi5Rio8OCeVI7R5B1hDJVb2XAk7c__OyR-0bpET2xO1SocDWentOBLAScAowMhCY8dHrxlw6_zgdLmo5ycsDvqfN4-XwEDnnU8oUCzVetYWxRbIp118_5GvJGw8lgFpevxjSsa0BPF1G3rhzXQA4JFYYgDzPwZk");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-bold leading-normal">Admin</h1>
+<p class="text-[#9db9a6] text-sm font-normal leading-normal">Administrador</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-white" style="font-size: 24px;">dashboard</span>
+<p class="text-white text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#28392e]" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">group</span>
+<p class="text-sm font-medium leading-normal">Usuarios</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">bar_chart</span>
+<p class="text-sm font-medium leading-normal">Estadísticas</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">article</span>
+<p class="text-sm font-medium leading-normal">Contenido</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">settings</span>
+<p class="text-sm font-medium leading-normal">Configuración</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">logout</span>
+<p class="text-sm font-medium leading-normal">Cerrar Sesión</p>
+</a>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-8 overflow-y-auto">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-8">
+<div class="flex flex-col gap-2">
+<p class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Gestión de Usuarios</p>
+<p class="text-[#9db9a6] text-base font-normal leading-normal">Administra los perfiles, roles y permisos de los usuarios.</p>
+</div>
+<button class="flex items-center justify-center gap-2 overflow-hidden rounded-lg h-12 px-6 bg-primary text-background-dark text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+<span class="truncate">Añadir Usuario</span>
+</button>
+</div>
+<div class="flex justify-between items-center gap-4 mb-6">
+<div class="relative w-full max-w-sm">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-white/50">search</span>
+<input class="w-full h-12 bg-[#1b2b21] border border-[#28392e] text-white rounded-lg pl-12 pr-4 focus:ring-primary focus:border-primary placeholder:text-white/50" placeholder="Buscar por nombre o email..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center gap-2 h-12 px-6 border border-[#28392e] bg-[#1b2b21] text-white rounded-lg hover:bg-[#28392e] transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+<span>Filtros</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-12 px-6 border border-[#28392e] bg-[#1b2b21] text-white rounded-lg hover:bg-[#28392e] transition-colors">
+<span class="material-symbols-outlined">download</span>
+<span>Exportar</span>
+</button>
+</div>
+</div>
+<div class="bg-[#141d17] rounded-lg overflow-hidden border border-[#28392e]">
+<table class="w-full text-left">
+<thead class="bg-[#1b2b21]">
+<tr>
+<th class="p-4 text-sm font-bold text-white/80 uppercase tracking-wider">Nombre</th>
+<th class="p-4 text-sm font-bold text-white/80 uppercase tracking-wider">Rol</th>
+<th class="p-4 text-sm font-bold text-white/80 uppercase tracking-wider">Estado</th>
+<th class="p-4 text-sm font-bold text-white/80 uppercase tracking-wider">Último Acceso</th>
+<th class="p-4 text-sm font-bold text-white/80 uppercase tracking-wider text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#28392e]">
+<tr class="hover:bg-[#1b2b21] transition-colors">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApBFwGw5sCtL7kvydfDRnIqbaTps_4LizDZfifQN7YPWHwUA3Bx36mHCJ6LT_Jhc_yenWokyEd1M8M-bbdi9mCkTBfCm3DrjuGoyaTS7F0MgYR4GWMB9024dtVO3kJSVT0ktDH1979HNEQsNlSpWDJzGDjcrEn3fzrhfYIP3kBl9v1mpyTprnR2URBS9j0tnrO4AWehyciO2fjqcJNM1TX68968EdLikyTuGjmv262UouuOcX0zURXRnLELUpM1868CEboh1Dn2pA")'></div>
+<div>
+<p class="font-medium text-white">Carla Rodriguez</p>
+<p class="text-sm text-white/60">carla.r@example.com</p>
+</div>
+</div>
+</td>
+<td class="p-4 text-white/90">Usuario Premium</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-500/20 text-green-400">Activo</span>
+</td>
+<td class="p-4 text-white/90">Hoy, 10:30 AM</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-[#1b2b21] transition-colors">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApBFwGw5sCtL7kvydfDRnIqbaTps_4LizDZfifQN7YPWHwUA3Bx36mHCJ6LT_Jhc_yenWokyEd1M8M-bbdi9mCkTBfCm3DrjuGoyaTS7F0MgYR4GWMB9024dtVO3kJSVT0ktDH1979HNEQsNlSpWDJzGDjcrEn3fzrhfYIP3kBl9v1mpyTprnR2URBS9j0tnrO4AWehyciO2fjqcJNM1TX68968EdLikyTuGjmv262UouuOcX0zURXRnLELUpM1868CEboh1Dn2pA")'></div>
+<div>
+<p class="font-medium text-white">Juan Pérez</p>
+<p class="text-sm text-white/60">juan.p@example.com</p>
+</div>
+</div>
+</td>
+<td class="p-4 text-white/90">Usuario Básico</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-500/20 text-green-400">Activo</span>
+</td>
+<td class="p-4 text-white/90">Ayer, 08:15 PM</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-[#1b2b21] transition-colors">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApBFwGw5sCtL7kvydfDRnIqbaTps_4LizDZfifQN7YPWHwUA3Bx36mHCJ6LT_Jhc_yenWokyEd1M8M-bbdi9mCkTBfCm3DrjuGoyaTS7F0MgYR4GWMB9024dtVO3kJSVT0ktDH1979HNEQsNlSpWDJzGDjcrEn3fzrhfYIP3kBl9v1mpyTprnR2URBS9j0tnrO4AWehyciO2fjqcJNM1TX68968EdLikyTuGjmv262UouuOcX0zURXRnLELUpM1868CEboh1Dn2pA")'></div>
+<div>
+<p class="font-medium text-white">Miguel Torres</p>
+<p class="text-sm text-white/60">miguel.t@example.com</p>
+</div>
+</div>
+</td>
+<td class="p-4 text-white/90">Usuario Básico</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-500/20 text-yellow-400">Pendiente</span>
+</td>
+<td class="p-4 text-white/90">20 Oct 2023, 09:00 AM</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-[#1b2b21] transition-colors">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApBFwGw5sCtL7kvydfDRnIqbaTps_4LizDZfifQN7YPWHwUA3Bx36mHCJ6LT_Jhc_yenWokyEd1M8M-bbdi9mCkTBfCm3DrjuGoyaTS7F0MgYR4GWMB9024dtVO3kJSVT0ktDH1979HNEQsNlSpWDJzGDjcrEn3fzrhfYIP3kBl9v1mpyTprnR2URBS9j0tnrO4AWehyciO2fjqcJNM1TX68968EdLikyTuGjmv262UouuOcX0zURXRnLELUpM1868CEboh1Dn2pA")'></div>
+<div>
+<p class="font-medium text-white">Sofía García</p>
+<p class="text-sm text-white/60">sofia.g@example.com</p>
+</div>
+</div>
+</td>
+<td class="p-4 text-white/90">Usuario Premium</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-500/20 text-red-400">Bloqueado</span>
+</td>
+<td class="p-4 text-white/90">15 Oct 2023, 03:45 PM</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-[#1b2b21] transition-colors">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApBFwGw5sCtL7kvydfDRnIqbaTps_4LizDZfifQN7YPWHwUA3Bx36mHCJ6LT_Jhc_yenWokyEd1M8M-bbdi9mCkTBfCm3DrjuGoyaTS7F0MgYR4GWMB9024dtVO3kJSVT0ktDH1979HNEQsNlSpWDJzGDjcrEn3fzrhfYIP3kBl9v1mpyTprnR2URBS9j0tnrO4AWehyciO2fjqcJNM1TX68968EdLikyTuGjmv262UouuOcX0zURXRnLELUpM1868CEboh1Dn2pA")'></div>
+<div>
+<p class="font-medium text-white">David Martinez</p>
+<p class="text-sm text-white/60">david.m@example.com</p>
+</div>
+</div>
+</td>
+<td class="p-4 text-white/90">Usuario Básico</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-500/20 text-green-400">Activo</span>
+</td>
+<td class="p-4 text-white/90">19 Oct 2023, 11:20 AM</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="flex justify-between items-center p-4 bg-[#1b2b21]">
+<span class="text-sm text-white/60">Mostrando 1-5 de 50 resultados</span>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center h-8 px-3 text-sm text-white border border-[#28392e] rounded-lg hover:bg-[#28392e] transition-colors">Anterior</button>
+<button class="flex items-center justify-center h-8 px-3 text-sm text-white border border-[#28392e] rounded-lg hover:bg-[#28392e] transition-colors">Siguiente</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

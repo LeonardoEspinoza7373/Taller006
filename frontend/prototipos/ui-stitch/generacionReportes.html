@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Generador de Reportes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2bee6c",
+              "background-light": "#f6f8f6",
+              "background-dark": "#111813",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex min-h-screen">
+<aside class="w-64 bg-[#141d17] flex-shrink-0 flex flex-col">
+<div class="flex h-full min-h-[700px] flex-col justify-between p-4">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 px-2 py-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbxy6VXln-F6qUG6FTyeWPwqNpUCDl1nzJeQgiTWPPu4kkl5SRTGCClnKJYx4vqgHIZqzQWNr4WBrQ40rWO1-B7_OT1nqxt1mcuMLgJBBFHd4efi5Rio8OCeVI7R5B1hDJVb2XAk7c__OyR-0bpET2xO1SocDWentOBLAScAowMhCY8dHrxlw6_zgdLmo5ycsDvqfN4-XwEDnnU8oUCzVetYWxRbIp118_5GvJGw8lgFpevxjSsa0BPF1G3rhzXQA4JFYYgDzPwZk");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-bold leading-normal">Ana López</h1>
+<p class="text-[#9db9a6] text-sm font-normal leading-normal">Plan Premium</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">calendar_month</span>
+<p class="text-sm font-medium leading-normal">Planificador</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">history</span>
+<p class="text-sm font-medium leading-normal">Historial</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#28392e]" href="#">
+<span class="material-symbols-outlined text-white" style="font-size: 24px;">assessment</span>
+<p class="text-white text-sm font-medium leading-normal">Reportes</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">person</span>
+<p class="text-sm font-medium leading-normal">Perfil</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">settings</span>
+<p class="text-sm font-medium leading-normal">Configuración</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">help</span>
+<p class="text-sm font-medium leading-normal">Ayuda</p>
+</a>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-8 overflow-y-auto">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-8">
+<div class="flex flex-col gap-2">
+<p class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Generador de Reportes</p>
+<p class="text-[#9db9a6] text-base font-normal leading-normal">Crea y exporta informes personalizados sobre tu progreso.</p>
+</div>
+<button class="flex items-center justify-center gap-2 overflow-hidden rounded-lg h-12 px-6 bg-primary text-background-dark text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">download</span>
+<span class="truncate">Exportar PDF</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-1 bg-[#1b2b21] p-6 rounded-lg self-start">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-6">Configurar Reporte</h2>
+<form class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-white mb-2" for="report-type">Tipo de Reporte</label>
+<select class="w-full bg-[#28392e] border-[#3b5443] text-white rounded-lg focus:ring-primary focus:border-primary" id="report-type">
+<option>Progreso de Rutinas</option>
+<option>Estadísticas Nutricionales</option>
+<option>Reporte General</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-white mb-2" for="date-range">Rango de Fechas</label>
+<div class="flex items-center gap-3">
+<input class="w-full bg-[#28392e] border-[#3b5443] text-white rounded-lg focus:ring-primary focus:border-primary" id="date-range" type="date" value="2023-10-01"/>
+<span class="text-white/50">-</span>
+<input class="w-full bg-[#28392e] border-[#3b5443] text-white rounded-lg focus:ring-primary focus:border-primary" type="date" value="2023-10-31"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-white mb-2">Métricas a Incluir</label>
+<div class="space-y-3">
+<label class="flex items-center gap-x-3 cursor-pointer">
+<input checked="" class="h-5 w-5 rounded border-[#3b5443] border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-white text-base">Ejercicios Completados</span>
+</label>
+<label class="flex items-center gap-x-3 cursor-pointer">
+<input checked="" class="h-5 w-5 rounded border-[#3b5443] border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-white text-base">Series y Repeticiones</span>
+</label>
+<label class="flex items-center gap-x-3 cursor-pointer">
+<input class="h-5 w-5 rounded border-[#3b5443] border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-white text-base">Peso Levantado</span>
+</label>
+<label class="flex items-center gap-x-3 cursor-pointer">
+<input checked="" class="h-5 w-5 rounded border-[#3b5443] border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-white text-base">Duración de Sesiones</span>
+</label>
+</div>
+</div>
+<div>
+<button class="w-full flex items-center justify-center gap-2 rounded-lg h-12 px-6 bg-primary text-background-dark text-base font-bold leading-normal hover:opacity-90 transition-opacity" type="submit">
+<span class="material-symbols-outlined">query_stats</span>
+<span>Generar Reporte</span>
+</button>
+</div>
+</form>
+</div>
+<div class="lg:col-span-2 space-y-8">
+<div class="bg-[#1b2b21] p-6 rounded-lg">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Reporte de Progreso de Rutinas</h2>
+<p class="text-[#9db9a6]">01 Oct, 2023 - 31 Oct, 2023</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="text-white/50 hover:text-white transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="text-white/50 hover:text-white transition-colors">
+<span class="material-symbols-outlined">print</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+<div class="bg-[#28392e] p-4 rounded-lg text-center">
+<p class="text-[#9db9a6] text-sm">Sesiones</p>
+<p class="text-white text-3xl font-bold">22</p>
+</div>
+<div class="bg-[#28392e] p-4 rounded-lg text-center">
+<p class="text-[#9db9a6] text-sm">Ejercicios</p>
+<p class="text-white text-3xl font-bold">110</p>
+</div>
+<div class="bg-[#28392e] p-4 rounded-lg text-center">
+<p class="text-[#9db9a6] text-sm">Duración Total</p>
+<p class="text-white text-3xl font-bold">25h</p>
+</div>
+<div class="bg-[#28392e] p-4 rounded-lg text-center">
+<p class="text-[#9db9a6] text-sm">% Completado</p>
+<p class="text-primary text-3xl font-bold">95%</p>
+</div>
+</div>
+<div>
+<h3 class="text-white font-bold mb-4">Volumen por Grupo Muscular</h3>
+<div class="h-64 w-full bg-[#111813] rounded-lg p-4 flex items-end justify-between">
+<div class="flex items-end gap-2 h-full w-full justify-around">
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 bg-[#28392e] rounded-t" style="height: 60%;">
+<div class="w-full bg-primary rounded-t" style="height: 80%;"></div>
+</div><p class="text-[#9db9a6] text-xs">Pecho</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 bg-[#28392e] rounded-t" style="height: 80%;">
+<div class="w-full bg-primary rounded-t" style="height: 70%;"></div>
+</div><p class="text-[#9db9a6] text-xs">Espalda</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 bg-[#28392e] rounded-t" style="height: 90%;">
+<div class="w-full bg-primary rounded-t" style="height: 95%;"></div>
+</div><p class="text-[#9db9a6] text-xs">Piernas</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 bg-[#28392e] rounded-t" style="height: 50%;">
+<div class="w-full bg-primary rounded-t" style="height: 85%;"></div>
+</div><p class="text-[#9db9a6] text-xs">Brazos</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 bg-[#28392e] rounded-t" style="height: 70%;">
+<div class="w-full bg-primary rounded-t" style="height: 60%;"></div>
+</div><p class="text-[#9db9a6] text-xs">Hombros</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 bg-[#28392e] rounded-t" style="height: 40%;">
+<div class="w-full bg-primary rounded-t" style="height: 75%;"></div>
+</div><p class="text-[#9db9a6] text-xs">Core</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

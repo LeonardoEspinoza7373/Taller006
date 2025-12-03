@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard de Notificaciones y Recordatorios</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2bee6c",
+            "background-light": "#f6f8f6",
+            "background-dark": "#102216",
+          },
+          fontFamily: {
+            "display": ["Manrope", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex min-h-screen w-full">
+<!-- SideNavBar -->
+<aside class="flex flex-col w-64 bg-background-light dark:bg-background-dark border-r border-white/10 p-4">
+<div class="flex flex-col gap-4 flex-grow">
+<div class="flex items-center gap-3 p-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture with abstract gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJi2TjFfQRWxTqraYu_gxUIY3_JzQ1v-NCqb-2_LQ5cnnVF5zcaWSKL1xJgj2bd-uqu4SQ13je49oC5e9Bl9VwWLjbWkyjRCHEvdgDjkwttOnzw7GOGpmhakwDiRX38iEB_zO9Z-Kn-eW7MLHdgpasSThj3fYfbUJLIvFUuEzfiPVqfhh_VCvX1jVu3SPFDU_jBFXfaHfLG7pUTUnsDHtOjF6uA4EZ8pHZx4UsXy8W-c_8IwU1F9tL-YMTW-X5c9ixtgzzlaDDg3U");'></div>
+<div class="flex flex-col">
+<h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Alex Morgan</h1>
+<p class="text-gray-500 dark:text-white/60 text-sm font-normal leading-normal">Plan Premium</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-white/80 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<p class="text-sm font-medium leading-normal">Planificador</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-white/80 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<p class="text-sm font-medium leading-normal">Progreso</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-white/80 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Configuración</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-white/80 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg" href="#">
+<span class="material-symbols-outlined">help</span>
+<p class="text-sm font-medium leading-normal">Ayuda</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-white/80 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium leading-normal">Cerrar Sesión</p>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8">
+<div class="max-w-4xl mx-auto">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between items-center gap-4 mb-8">
+<div class="flex flex-col gap-2">
+<p class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Notificaciones y Recordatorios</p>
+<p class="text-gray-500 dark:text-white/60 text-base font-normal leading-normal">Aquí tienes tus últimas actualizaciones y recordatorios.</p>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Marcar todo como leído</span>
+</button>
+</div>
+<!-- Chips -->
+<div class="flex gap-3 mb-6 pb-4 border-b border-white/10">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 text-primary px-4">
+<p class="text-sm font-medium leading-normal">Todo</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white/5 text-gray-700 dark:text-white/80 px-4 hover:bg-white/10">
+<p class="text-sm font-medium leading-normal">Rutinas</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white/5 text-gray-700 dark:text-white/80 px-4 hover:bg-white/10">
+<p class="text-sm font-medium leading-normal">Logros</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white/5 text-gray-700 dark:text-white/80 px-4 hover:bg-white/10">
+<p class="text-sm font-medium leading-normal">Sistema</p>
+</button>
+</div>
+<!-- List Items -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 py-3 justify-between border border-transparent hover:border-white/10 hover:bg-white/5 rounded-xl transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">El entrenamiento matutino comienza en 15 minutos</p>
+<p class="text-gray-500 dark:text-white/60 text-sm font-normal leading-normal line-clamp-2">Hoy a las 07:00 AM</p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-primary/20 text-primary text-sm font-medium leading-normal w-fit hover:bg-primary/30">
+<span class="truncate">Ver Rutina</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 py-3 justify-between border border-transparent hover:border-white/10 hover:bg-white/5 rounded-xl transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">emoji_events</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">¡Felicidades! Has completado tu racha de 7 días</p>
+<p class="text-gray-500 dark:text-white/60 text-sm font-normal leading-normal line-clamp-2">Hace 5 minutos</p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-white/5 text-gray-700 dark:text-white/80 text-sm font-medium leading-normal w-fit hover:bg-white/10">
+<span class="truncate">Descartar</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 py-3 justify-between border border-transparent hover:border-white/10 hover:bg-white/5 rounded-xl transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">system_update</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Nueva función: Resumen Semanal</p>
+<p class="text-gray-500 dark:text-white/60 text-sm font-normal leading-normal line-clamp-2">Ayer a las 03:30 PM</p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-white/5 text-gray-700 dark:text-white/80 text-sm font-medium leading-normal w-fit hover:bg-white/10">
+<span class="truncate">Ver Novedades</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 py-3 justify-between border border-transparent hover:border-white/10 hover:bg-white/5 rounded-xl transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Recordatorio de hidratación</p>
+<p class="text-gray-500 dark:text-white/60 text-sm font-normal leading-normal line-clamp-2">No olvides beber agua cada hora para mantenerte en forma.</p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-white/5 text-gray-700 dark:text-white/80 text-sm font-medium leading-normal w-fit hover:bg-white/10">
+<span class="truncate">Descartar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
